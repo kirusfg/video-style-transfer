@@ -1,5 +1,4 @@
 import tensorflow as tf
-import tensorflow_hub as hub
 from utils.optical_flow import compute_optical_flow, warp_with_flow
 
 # VGG model for feature extraction

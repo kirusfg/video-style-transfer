@@ -69,7 +69,7 @@ def frames_to_video(frame_paths: List[str], output_path: str, fps: float = 30.0,
         os.rename(output_path, temp_output)
         subprocess.run(["ffmpeg", "-i", temp_output, "-c:v", "libx264", "-preset", "medium", "-crf", "23", output_path])
         os.remove(temp_output)
-    except:
+    except (subprocess.SubprocessError, FileNotFoundError):
         print("FFmpeg not available, using original output")
 
 

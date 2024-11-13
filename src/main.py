@@ -57,7 +57,7 @@ def main():
 
         if args.model == "basic":
             print("\nTraining basic style transfer model...")
-            model_basic = train_basic(
+            train_basic(
                 args.frames_dir,
                 args.style,
                 os.path.join(args.models_dir, "basic"),
@@ -65,7 +65,7 @@ def main():
             )
         else:  # temporal
             print("\nTraining style transfer model with temporal consistency...")
-            model_temporal = train_temporal(
+            train_temporal(
                 args.frames_dir,
                 args.style,
                 os.path.join(args.models_dir, "temporal", "style_transfer_temporal.keras"),
